@@ -28,7 +28,14 @@ public:
     }
     
     bool empty() {
-        return instack.empty() && outstack.empty();
+        if(instack.empty() && outstack.empty())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 };
 
