@@ -3,10 +3,8 @@ public:
     int largestRectangleArea(vector<int>& heights) {
          int n = heights.size(); 
         stack<int> st; 
-        int max_area = 0; 
-        
+        int max_area = 0;     
         vector<int> left(n), right(n); 
-
         for(int i = 0; i < n; i++) { 
             while(!st.empty() && heights[st.top()] >= heights[i]) { 
                 st.pop(); 
@@ -22,6 +20,7 @@ public:
         while(!st.empty()) {
             st.pop();
         }
+        while(!st.empty()) st.pop();
 
         for(int i = n - 1; i >= 0; i--) { 
             while(!st.empty() && heights[st.top()] >= heights[i]) { 
